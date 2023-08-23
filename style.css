@@ -1,0 +1,278 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: hsl(36, 100%, 99%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.container {
+  margin: 40px;
+  width: 1000px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+header .mobile-lists ul {
+  display: flex;
+  gap: 30px;
+}
+header ul li {
+  list-style: none;
+  color: hsl(236, 13%, 42%);
+}
+header ul li:hover {
+  color: hsl(5, 85%, 63%);
+  cursor: pointer;
+}
+
+/* Section */
+
+section {
+  width: fit-content;
+  display: grid;
+  grid-template-columns: 28% 32% auto;
+  grid-template-rows: auto auto;
+  column-gap: 30px;
+  row-gap: 20px;
+  margin-bottom: 60px;
+}
+
+section img {
+  width: 100%;
+  grid-column: 1 / 3;
+  grid-row: 1;
+}
+
+section h1 {
+  grid-column: 1;
+  font-size: 50px;
+  font-weight: 800;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.description p {
+  font-size: 15px;
+  line-height: 25px;
+  color: hsl(236, 13%, 42%);
+}
+.description button {
+  background-color: hsl(5, 85%, 63%);
+  color: hsl(36, 100%, 99%);
+  padding: 15px 25px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  border: none;
+}
+.description button:hover {
+  cursor: pointer;
+  background-color: hsl(240, 100%, 5%);
+}
+
+.news {
+  padding: 30px 20px 0;
+  background-color: hsl(240, 100%, 5%);
+  grid-column: 3;
+  grid-row: 1/3;
+}
+.news h2 {
+  font-size: 40px;
+  color: hsl(35, 77%, 62%);
+}
+
+.news .news-parent {
+  margin-top: 30px;
+  padding-right: 10px;
+}
+.news .news-parent:not(:last-child) {
+  border-bottom: 1px solid hsl(236, 13%, 42%);
+}
+
+.news .news-parent h3 {
+  color: hsl(36, 100%, 99%);
+}
+.news .news-parent h3:hover {
+  cursor: pointer;
+  color: hsl(35, 77%, 62%);
+}
+
+.news .news-parent p {
+  padding: 10px 0 30px;
+  color: hsla(233, 8%, 79%, 0.7);
+  font-size: 15px;
+}
+.lists {
+  display: none;
+}
+@media (680px <=width < 1000px) {
+  .container {
+    width: 100%;
+    margin: 20px;
+  }
+  section {
+    grid-template-columns: 50% auto;
+    grid-template-rows: auto auto auto;
+  }
+  section img {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  section h1 {
+    font-size: 40px;
+    text-align: center;
+  }
+  section .description {
+    align-items: center;
+    text-align: center;
+  }
+  section .news {
+    grid-column: 2;
+    grid-row: 1 / 4;
+  }
+}
+
+/* Footer */
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+footer .parent {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+footer .parent img {
+  width: 100px;
+}
+
+footer .parent .description-parent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+footer .parent .description-parent h1 {
+  color: hsl(233, 8%, 79%);
+}
+footer .parent .description-parent h4 {
+  color: hsl(240, 100%, 5%);
+  font-weight: 800;
+}
+footer .parent .description-parent h4:hover {
+  cursor: pointer;
+  color: hsl(5, 85%, 63%);
+}
+
+footer .parent .description-parent p {
+  font-size: 15px;
+  color: hsl(236, 13%, 42%);
+}
+
+.hidden {
+  display: none;
+}
+
+@media (width < 680px) {
+  .container {
+    width: 92%;
+    margin: 30px 0;
+  }
+  header {
+    margin-bottom: 30px;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+  section h1 {
+    font-size: 35px;
+  }
+  .description p {
+    margin-bottom: 20px;
+  }
+  .description button {
+    margin-bottom: 30px;
+  }
+  footer {
+    flex-direction: column;
+  }
+
+  .lists {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: hsl(36, 100%, 99%);
+    height: 100vh;
+    width: 65%;
+    padding: 20px 20px 0 0;
+    z-index: 9999;
+    color: hsl(240, 100%, 5%);
+    font-weight: 800;
+  }
+  .lists img {
+    float: right;
+  }
+  .lists ul {
+    padding: 120px 30px;
+    display: flex;
+    flex-direction: column;
+  }
+  .lists ul li {
+    list-style: none;
+    margin-top: 20px;
+  }
+  .lists ul li:hover {
+    color: hsl(5, 85%, 63%);
+    cursor: pointer;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* backdrop-filter: blur(3px); */
+    z-index: 5;
+  }
+  .btn-menu {
+    display: block;
+  }
+  .btn-close {
+    display: block;
+  }
+  .btn-menu,
+  .btn-close {
+    cursor: pointer;
+  }
+  header .mobile-lists {
+    display: none;
+  }
+  .show {
+    display: block;
+  }
+}
